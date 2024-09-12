@@ -1,0 +1,46 @@
+{
+  "name": "@catppuccin/palette",
+  "version": "1.2.0",
+  "description": "Soothing pastel themes for the high-spirited!",
+  "author": "Catppuccin Org",
+  "homepage": "https://github.com/catppuccin/palette#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catppuccin/palette.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/catppuccin/palette/issues"
+  },
+  "main": "./script/mod.js",
+  "module": "./esm/mod.js",
+  "exports": {
+    ".": {
+      "import": "./esm/mod.js",
+      "require": "./script/mod.js"
+    },
+    "./css/*": "./css/*",
+    "./less/*": "./less/*",
+    "./scss/*": "./scss/*"
+  },
+  "scripts": {
+    "test": "node test_runner.js"
+  },
+  "private": false,
+  "funding": [
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/catppuccin"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/catppuccin"
+    }
+  ],
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "picocolors": "^1.0.0",
+    "@deno/shim-deno": "~0.17.0"
+  },
+  "_generatedBy": "dnt@0.39.0"
+}

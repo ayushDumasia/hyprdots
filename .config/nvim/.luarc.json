@@ -1,0 +1,15 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "null_ls",
+        "local",
+        "grep",
+        "current_line_blame",
+        "dependencies"
+    ],
+    "diagnostics.disable": [
+        "redundant-value",
+        "undefined-global",
+        "unused-local"
+    ]
+}

@@ -1,0 +1,140 @@
+{
+	"layer": "top",
+	"margin-left": 16,
+	"margin-right": 16,
+	"margin-top": 4,
+	"margin-bottom": 4,
+	"modules-left": ["custom/launcher", "hyprland/workspaces", "cpu", "memory", "temperature"],
+	"modules-center": ["clock", "custom/weather"],
+	"modules-right": ["custom/update", "custom/wallpaper", "pulseaudio", "backlight", "network", "bluetooth", "battery", "custom/powerctl"],
+	
+    "custom/launcher": {
+        "format": "",
+		"tooltip": false,
+    "on-click" : " ~/.config/rofi/launchers/type-7/launcher.sh"
+    },
+	"hyprland/workspaces": {
+        "disable-scroll": false,
+        "sort-by-name": true,
+        "format": " {icon} ",
+	    "format-icons": { 
+			"active": "●",
+        	"default": "○"
+        },
+		"persistent-workspaces": {
+			"*": 6
+		},
+    "on-scroll-up" : "hyprctl dispatch workspace e+1",
+"on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+	"cpu": {
+    	"interval": 1,
+    	"format": "{usage}% <span font='Font Awesome 5 Free'>\uf2db</span>",
+		"on-click": "kitty btop"
+	},
+	"memory": {
+		"interval": 1,
+		"format": "{percentage}% <span font='Font Awesome 5 Free'>\uf538</span>",
+		"on-click": "kitty btop",
+		"tooltip-format": "{used}/{total} GiB"
+	},
+	"custom/update": {
+		"interval": 86000,
+		"format": "{}",
+		"exec": "~/.config/waybar/scripts/check-updates.sh",
+		"on-click": "kitty yay",
+		"tooltip": false
+	},
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"scrolllock": false,
+		"format": "{name} {icon}",
+		"format-icons": {
+			"locked": "\uf023",
+			"unlocked": "\uf3c1"
+		}
+	},	
+	"clock": {
+        "timezone": "Asia/Kolkata",
+        "tooltip": false,
+        "format": "{:%a, %d %b | %H:%M}"
+    },
+	"custom/weather": {
+    	"format": "{}°C",
+    	"tooltip": false,
+    	"interval": 3600,
+    	"exec": "wttrbar --location 'Ahmedabad'",
+    	"return-type": "json"
+	},
+	"custom/wallpaper": {
+		"format": "\uf03e",
+		"on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
+		"tooltip": false
+	},
+	"temperature": {
+		"interval": 1,
+		"thermal-zone": 6,
+		"critical-threshold": 80,
+		"format-critical": "{temperatureC}°C <span font='Font Awesome 5 Free'></span>",
+		"format": "{temperatureC}°C <span font='Font Awesome 5 Free'></span>",
+		"tooltip": false
+	},
+	"pulseaudio": {
+		"format": "<span font='Font Awesome 5 Free'>{icon}</span>",
+		"format-muted": "<span font='Font Awesome 5 Free'>\uf6a9</span>",
+		"format-icons": {
+			"headphone": "\uf025",
+			"default": "\uf028"
+		},
+		"tooltip" : true,
+		"tooltip-format": "{volume%} | {desc}",
+		"on-click": "pamixer -t"
+	}, 
+	"backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+		"format-icons": ["<span font='Font Awesome 5 Free' size='16pt' rise='-1250'> ☼</span>"],
+		"tooltip-format": "{percent}%",
+		"tooltip": true
+    },
+	"network": {
+      	"format-wifi": "{icon}",
+      	"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+      	"format-ethernet": "󱎔",
+      	"format-linked": "󰌷",
+      	"format-disconnected": "󰪎",
+      	"tooltip-format-wifi": "{essid}\n{signalStrength}󰏰\n{ifname}\n{gwaddr}",
+      	"tooltip-format-ethernet": "󱎔 {ifname}",
+      	"tooltip-disconnected": "Disconnected",
+		"on-click": "~/.config/rofi/wifi.sh"
+    },
+	"bluetooth": {
+      	"format": "󰂯",
+      	"format-disabled": "󰂲",
+      	"format-off": "󰂲",
+      	"format-connected": "󰂱",
+      	"format-connected-battery": "󰂱 {device_battery_percentage}󰏰",
+      	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+	"battery": {
+        "states": {
+			"good": 100,
+            "warning": 40,
+			"low": 20,
+			"critical": 7
+        },
+		"interval": 1,
+        "format": "{capacity}% <span font='Font Awesome 5 Free'>{icon}</span>",
+        "format-charging": "{capacity}% <span font='Font Awesome 5 Free'>\uf0e7</span>",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    },
+	"custom/powerctl": {
+		"tooltip": false,
+		"format": "\uf011",
+		"on-click": "~/.config/rofi/powermenu/type-5/powermenu.sh"
+	}
+}
