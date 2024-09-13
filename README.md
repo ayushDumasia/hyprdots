@@ -86,37 +86,25 @@
 
 ### System Monitoring & Performance
 
-- [ ] Install `gotop` or `glances` for system monitoring.
 - [ ] Set up `cpupower` for CPU management.
-- [x] Use `nvidia-settings` or `optimus-manager` for NVIDIA GPU management. ✅ 2024-09-11
 
 ### Security & Backup
 
 - [ ] Install `ufw` or `firewalld` for managing firewall.
 - [ ] Set up `timeshift` or `restic` for automated backups.
 
-### Window Manager Tools
-
-- [ ] Add `picom` for window effects and transparency.
-- [ ] Explore `bismuth` or `skippy-xd` for advanced window management.
-
 ### Shell Utilities
 
-- [ ] Install `autojump` as an alternative to `cd`.
 - [ ] Add `httpie` for API requests.
 - [ ] Use `ripgrep` (`rg`) for faster file searches.
-- [ ] Try `htop` as a lightweight alternative to `btop`.
 
 ### Productivity Tools
 
 - [ ] Install `rsync` or `rclone` for efficient file transfer.
-- [ ] Set up `paru` or `yay` for AUR package management.
 - [ ] Use `borg` or `rsnapshot` for file backups.
 
 ### Clipboard & File Utilities
 
-- [ ] Add `greenclip` for clipboard history management (GUI).
-- [ ] Use `lf` or `nnn` for terminal-based file management with previews.
 - [ ] Install `zathura` for minimalistic PDF viewing.
 
 ### Developer Tools
@@ -129,6 +117,4 @@
 
 - [ ] Install `pass` for password management in the terminal.
 - [ ] Try `calcurse` for task and calendar management.
-- [ ] Set up `nvtop` for GPU monitoring.
-- [ ] Use `ncdu` for disk usage visualization.
 - [ ] Install `tlp` for laptop power management.
