@@ -3,6 +3,9 @@
 # Send a notification if the laptop battery is either low or is fully charged.
 # Set on a systemd timer (~/.config/systemd/user/battery-alert.timer).
 
+
+
+
 export DISPLAY=:0
 export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 
