@@ -29,7 +29,7 @@
     },
 	"cpu": {
     	"interval": 1,
-    	"format": "{usage}% <span font='Font Awesome 5 Free'>\uf2db</span>",
+    	"format": "{usage}% <span font='Font Awesome 6 Free-Solid'>\uf2db</span>",
 		"on-click": "kitty btop"
 	},
 	"memory": {
@@ -64,7 +64,7 @@
     	"format": "{}°C",
     	"tooltip": false,
     	"interval": 3600,
-    	"exec": "wttrbar --location 'Ahmedabad'",
+    	"exec": "wttrbar --location 'Surat'",
     	"return-type": "json"
 	},
 	"custom/wallpaper": {

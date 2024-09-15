@@ -10,5 +10,5 @@ WALLPAPER=$( find $TARGET -type f -regex '.*\.\(jpg\|jpeg\|png\|webp\)' | shuf -
 
 echo "preload = $WALLPAPER" > /home/archer/.config/hypr/hyprpaper.conf
 echo "wallpaper = eDP-1, $WALLPAPER" >> /home/archer/.config/hypr/hyprpaper.conf
-echo "splash = on" >> /home/archer/.config/hypr/hyprpaper.conf
+echo "splash = off" >> /home/archer/.config/hypr/hyprpaper.conf
 echo "ipc = off" >> /home/archer/.config/hypr/hyprpaper.conf
