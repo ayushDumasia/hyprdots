@@ -1,0 +1,97 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 350
+    origin = top-right
+    offset = 28x28  # Compact positioning
+
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 2
+    progress_bar_min_width = 150
+    progress_bar_max_width = 1000
+    progress_bar_corner_radius = 5
+    progress_bar_background = "#a6e3a1"  # Mocha Purple
+    progress_bar_color = "#a6e3a1"       # Mocha Purple highlight
+
+    indicate_hidden = yes
+    shrink = no
+    separator_height = 2
+    separator_color = "#313244"          # Mocha Surface0 (Darker for separator)
+    padding = 15
+    horizontal_padding = 15
+    frame_width = 1
+    frame_color = "#cdd6f4"              # Mocha Surface0 (for frame border)
+    corner_radius = 12
+    sort = yes
+    idle_threshold = 120
+
+    font = Maple Mono 11
+    line_height = 1.2
+    markup = full
+    format = "<span weight='bold' font='14'>%s</span>"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    word_wrap = yes
+    ellipsize = middle
+    ignore_newline = yes
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    icon_position = right  # Right side for better alignment
+    min_icon_size = 50
+    max_icon_size = 70
+    icon_path = $HOME/.local/share/icons/dunst
+    sticky_history = yes
+    history_length = 20
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_left_click = do_action, close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+[urgency_low]
+    background = "#11111b"               # Mocha Base
+    foreground = "#e0def4"               # Mocha Text
+    highlight = "#f5c2e7"                # Mocha Pink for highlight
+    frame_color = "#313244"              # Mocha Surface0 for frame
+    timeout = 5
+    border_color = "#313244"             # Mocha Surface0 for border
+    border_width = 2
+
+[urgency_normal]
+    background = "#11111b"               # Mocha Base
+    foreground = "#e0def4"               # Mocha Text
+    highlight = "#cba6f7"                # Mocha Purple for highlight
+    frame_color = "#313244"              # Mocha Surface0 for frame
+    timeout = 5
+    border_color = "#313244"             # Mocha Surface0 for border
+    border_width = 2
+
+[urgency_critical]
+    background = "#11111b"               # Mocha Base
+    foreground = "#e0def4"               # Mocha Text
+    frame_color = "#f38ba8"              # Mocha Red for critical frame
+    timeout = 1000
+    border_color = "#f38ba8"             # Mocha Red for critical border
+    border_width = 2
+
+[volume]
+    highlight = "#a6e3a1"                # Mocha Purple
+    icon_size = 60
+    icon_position = right
+
+[backlight]
+    highlight = "#a6e3a1"                # Mocha Pink
+    icon_size = 60
+    icon_position = right
+
+# vim: ft=cfg
