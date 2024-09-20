@@ -84,7 +84,7 @@ alias cls='clear'
 alias tkill='tmux kill-server'
 alias isc='nvim $(fzf -m --preview="bat --color=always {}")'
 alias ls='eza --tree --level=1 --icons --all --sort=Name'
-alias search='eval "~/search.sh"'
+alias search='eval "~/.local/bin/search.sh"'
 alias pacman='sudo pacman'
 # # eval "$(oh-my-posh init zsh)"
 # eval "$(starship init zsh --config $HOME/.config/starship/base.toml)"
@@ -111,6 +111,14 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --multi"
+
+
+#alias connectGit='
+#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+ #   eval "$(ssh-agent -s)"
+#fi
+#ssh-add ~/.ssh/id_ed25519
+#'
 
 
 export PATH=$HOME/.config/rofi/scripts:$PATH

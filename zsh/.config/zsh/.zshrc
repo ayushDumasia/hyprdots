@@ -84,7 +84,7 @@ alias cls='clear'
 alias tkill='tmux kill-server'
 alias isc='nvim $(fzf -m --preview="bat --color=always {}")'
 alias ls='eza --tree --level=1 --icons --all --sort=Name'
-alias search='eval "~/search.sh"'
+alias search='eval "~/.local/bin/search.sh"'
 alias pacman='sudo pacman'
 # # eval "$(oh-my-posh init zsh)"
 # eval "$(starship init zsh --config $HOME/.config/starship/base.toml)"
