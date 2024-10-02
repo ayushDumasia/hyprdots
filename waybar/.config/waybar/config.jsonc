@@ -3,7 +3,7 @@
   "margin-left": 8,
   "margin-right": 8,
   "margin-top": 4,
-  "margin-bottom": 2,
+  "margin-bottom": 1,
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
@@ -13,7 +13,7 @@
   ],
   "modules-center": ["clock"],
   "modules-right": [
-    "hyprland/window",
+    // "hyprland/window",
     "custom/update",
     "custom/wallpaper",
     "pulseaudio",
