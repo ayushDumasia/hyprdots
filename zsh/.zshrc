@@ -83,7 +83,7 @@ eval "$(zoxide init --cmd cd zsh)"
 alias cls='clear'
 alias tkill='tmux kill-server'
 alias isc='nvim $(fzf -m --preview="bat --color=always {}")'
-alias ls='eza --tree --level=1 --icons --all --sort=Name'
+alias ls='eza -l --tree --level=1 --icons --all --sort=Name'
 alias search='eval "~/.local/bin/search.sh"'
 alias pacman='sudo pacman'
 # # eval "$(oh-my-posh init zsh)"
@@ -94,9 +94,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
 
-#fastfetch
+fastfetch
 #nerdfetch
-nitch
+#nitch
 
 #wl-paste --watch cliphist store &
 eval $(thefuck --alias)
@@ -125,3 +125,13 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export HYPRSHOT_DIR=$HOME/Downloads/Screenshot:$HYPRSHOT_DIR
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR=/bin/nvim
+. "/home/archer/.deno/env"
+# bun completions
+[ -s "/home/archer/.bun/_bun" ] && source "/home/archer/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/archer/.pulumi/bin

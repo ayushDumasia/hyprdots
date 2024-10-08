@@ -1,13 +1,29 @@
-:root {
-    --base: #3c3836; /* Base background color */
-    --text: #ebdbb2; /* Text color */
-    --green: #b8bb26; /* Green */
-    --red: #fb4934; /* Red */
-    --lavender: #d5c4a1; /* Lavender */
-    --flamingo: #ea6a6a; /* Flamingo */
-    --mauve: #c79dff; /* Mauve */
-    --blue: #83a598; /* Blue */
-    --rosewater: #f5e0dc; /* Rosewater */
-    --yellow: #fabd2f; /* Yellow */
-    --peach: #f2b5d4; /* Peach */
-}
+/* find more on https://coolors.co */
+
+/* white */
+@define-color white         #fcfcfc;
+@define-color beige         #EEF5DB;
+@define-color antiflash     #F1F2F6;
+/* black */
+@define-color onyx          #313638;
+@define-color raisin-black  #1e1e2e;
+@define-color gunmetal      #333745;
+@define-color charcoal       #424651;
+/* blue */
+@define-color vista-blue    #89a6fb;
+@define-color glaucous      #577399;
+@define-color periwinkle    #AEADF0;
+/* green */
+@define-color mint          #52B788;
+@define-color celadon       #ADF7B6;
+@define-color carribean-current #0D5D56;
+@define-color dark-cyan     #368F8B;
+/* red */
+@define-color cerise        #E63462;
+@define-color crayola       #EF476F;
+@define-color bittersweet   #EB5E55;
+/* yellow */
+@define-color arylide-yellow #E3C567;
+@define-color amber         #FFBD00;
+@define-color sunglow       #FFC857;
+

@@ -2,8 +2,9 @@
     monitor = 0
     follow = mouse
     width = 350
+    height = (0,100)
     origin = top-right
-    offset = 28x28  # Compact positioning
+    offset = 18x18  # Compact positioning
 
     progress_bar = true
     progress_bar_height = 10
@@ -11,25 +12,25 @@
     progress_bar_min_width = 150
     progress_bar_max_width = 1000
     progress_bar_corner_radius = 5
-    progress_bar_background = "#a6e3a1"  # Mocha Purple
-    progress_bar_color = "#a6e3a1"       # Mocha Purple highlight
+    progress_bar_background = "#a6e3a1" 
+    progress_bar_color = "#a6e3a1"
 
-    indicate_hidden = yes
+    notification_limit = 2
+    indicate_hidden = false
     shrink = no
     separator_height = 2
-    separator_color = "#313244"          # Mocha Surface0 (Darker for separator)
+    separator_color = "#313244"
     padding = 15
     horizontal_padding = 15
     frame_width = 1
-    frame_color = "#cdd6f4"              # Mocha Surface0 (for frame border)
+    frame_color = "#cdd6f4"
     corner_radius = 12
     sort = yes
     idle_threshold = 120
-
-    font = Maple Mono 11
+    font = JetbrainsMono Nerd Font Mono
     line_height = 1.2
     markup = full
-    format = "<span weight='bold' font='14'>%s</span>"
+    format = "<span weight='bold' font='12'>%s</span>"
     alignment = left
     vertical_alignment = center
     show_age_threshold = 60
@@ -38,8 +39,8 @@
     ignore_newline = yes
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = yes
-    icon_position = right  # Right side for better alignment
+    show_indicators = false
+    icon_position = right 
     min_icon_size = 50
     max_icon_size = 70
     icon_path = $HOME/.local/share/icons/dunst

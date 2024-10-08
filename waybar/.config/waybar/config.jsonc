@@ -2,45 +2,22 @@
   "layer": "top",
   "margin-left": 8,
   "margin-right": 8,
-  "margin-top": 4,
-  "margin-bottom": 1,
-  "modules-left": [
-    "custom/launcher",
-    "hyprland/workspaces",
-    "cpu",
-    "memory",
-    "temperature"
-  ],
-  "modules-center": ["clock"],
+  "margin-top": 2,
+  "margin-bottom": 2,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["cpu", "memory", "clock"],
   "modules-right": [
-    // "hyprland/window",
-    "custom/update",
     "custom/wallpaper",
-    "pulseaudio",
+    "wireplumber",
     "backlight",
     "network",
     "bluetooth",
     "battery"
   ],
-
   "custom/launcher": {
     "format": "",
     "tooltip": false,
-    "on-click": "~/.config/rofi/launchers/type-4/launcher.sh"
-  },
-  "hyprland/workspaces": {
-    "disable-scroll": false,
-    "sort-by-name": true,
-    "format": " {icon} ",
-    "format-icons": {
-      "active": "●",
-      "default": "○"
-    },
-    "persistent-workspaces": {
-      "*": 6
-    },
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+    "on-click": "~/.config/rofi/launcher/launcher.sh"
   },
   "cpu": {
     "interval": 1,
@@ -53,123 +30,87 @@
     "on-click": "kitty btop",
     "tooltip-format": "{used}/{total} GiB"
   },
-  "custom/update": {
-    "interval": 86000,
-    "format": "{}",
-    "exec": "~/.config/waybar/scripts/check-updates.sh",
-    "on-click": "kitty yay",
-    "tooltip": false
-  },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "scrolllock": false,
-    "format": "{name} {icon}",
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "sort-by-name": true,
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
     "format-icons": {
-      "locked": "\uf023",
-      "unlocked": "\uf3c1"
+      "active": "",
+      "urgent": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
     }
   },
   "clock": {
-    "timezone": "Asia/Kolkata",
-    "tooltip": false,
-    "format": "{:%a, %d/%m | %H:%M}"
+    "format": "{:%I:%M %p • %a %d/%m}",
+    "tooltip": true,
+    "tooltip-format": "<tt>{calendar}</tt>"
   },
-  "custom/weather": {
-    "format": "{}°C",
-    "tooltip": false,
-    "interval": 3600,
-    "exec": "wttrbar --location 'Surat'",
-    "return-type": "json"
+  "backlight": {
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "]
   },
   "custom/wallpaper": {
     "format": "\uf03e",
     "on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
     "tooltip": false
   },
-  "temperature": {
-    "interval": 1,
-    "thermal-zone": 6,
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C <span font='Font Awesome 5 Free'></span>",
-    "format": "{temperatureC}°C <span font='Font Awesome 5 Free'></span>",
-    "tooltip": false
-  },
-  "pulseaudio": {
-    "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
-    "format-muted": "<span font='Font Awesome 5 Free'>\uf6a9</span>",
-    "format-icons": {
-      "headphone": "\uf025",
-      "default": "\uf028"
-    },
-    "tooltip": true,
-    "tooltip-format": "{volume%} | {desc}",
-    "on-click": "pamixer -t"
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": ["☼"],
-    "tooltip-format": "{percent}%",
-    "tooltip": true
-  },
+
   "network": {
-    "format-wifi": "{icon}",
-    "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
-    "format-ethernet": "󱎔",
-    "format-linked": "󰌷",
+    "format-wifi": " {icon}",
+    "format-ethernet": "󰈀",
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
     "format-disconnected": "󰪎",
-    "tooltip-format-wifi": "{essid}\n{signalStrength}󰏰\n{ifname}\n{gwaddr}",
-    "tooltip-format-ethernet": "󱎔 {ifname}",
-    "tooltip-disconnected": "Disconnected",
-    "on-click": "~/.config/rofi/wifi.sh"
-  },
-  "bluetooth": {
-    "format": "󰂯",
-    "format-disabled": "󰂲",
-    "format-off": "󰂲",
-    "format-connected": "󰂱",
-    "format-connected-battery": "󰂱 {device_battery_percentage}󰏰",
-    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    "interval": 5,
+    "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "exec ~/.config/rofi/wifi/wifi.sh",
+    "on-click-right": "alacritty -e nmtui"
   },
   "battery": {
     "states": {
-      "good": 100,
-      "warning": 40,
-      "low": 20,
-      "critical": 7
+      "good": 95,
+      "warning": 30,
+      "critical": 15
     },
-    "interval": 1,
-    "format": "{capacity}% <span font='Font Awesome 5 Free'>{icon}</span>",
-    "format-charging": "{capacity}% <span font='Font Awesome 5 Free'>\uf0e7</span>",
-    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    "format": " {capacity}% {icon} ",
+    "format-full": "{icon}",
+    "format-plugged": " {capacity}% <span font='Font Awesome 5 Free'>\uf0e7</span> ",
+    "format-alt": "{icon} {time}",
+    "tooltip-format": "{capacity}%, about {time} left",
+    "format-icons": [" ", " ", " ", " "]
   },
-  "hyprland/window": {
-    "format": "{class}",
-    "rewrite": {
-      "(.*) - Mozilla Firefox": " $1", // Firefox icon from Nerd Fonts
-      "(.*) - zsh": " [$1]", // Terminal icon from Nerd Fonts
-      "(.*) - Visual Studio Code": " $1", // VS Code icon
-      "(.*) - LibreOffice Writer": " $1", // Document icon
-      "(.*) - LibreOffice Calc": " $1", // Spreadsheet icon
-      "(.*) - VLC media player": " $1", // Music icon
-      "(.*) - GIMP": " $1", // GIMP icon
-      "(.*) - Inkscape": " $1", // Drawing icon
-      "(.*) - Spotify": " $1", // Spotify icon
-      "(.*) - Discord": "ﭮ $1", // Discord icon
-      "(.*) - Telegram": " $1", // Telegram icon
-      "(.*) - Evince": " $1", // PDF document icon
-      "(.*) - Nautilus": " $1" // File manager icon
-    },
-    "icon": true,
-    "icon-size": 20
+
+  "wireplumber": {
+    "max-volume": 200,
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-icons": [" ", " ", " "],
+    "format-muted": " ",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "pamixer -t",
+    "tooltip-format": "{volume}% | {desc}"
   },
-  "custom/powerctl": {
-    "tooltip": false,
-    "format": "\uf011",
-    "on-click": "~/.config/rofi/powermenu/type-5/powermenu.sh"
+
+  "bluetooth": {
+    "format": "{icon}",
+    "format-icons": ["", "󰤾", "󰥀", "󰥄", "󰥈"],
+
+    "tooltip-format-off": "Bluetooth is off",
+    "tooltip-format-on": "Bluetooth is on",
+
+    "format-connected": "{icon} {num_connections}",
+    "format-connected-battery": "{icon} {device_battery_percentage}%",
+
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
+
+    "on-click": "blueman-manager"
   }
 }
