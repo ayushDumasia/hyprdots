@@ -12,7 +12,13 @@
   box-shadow: none;
   text-shadow: none;
   background-color: transparent;
-  color: @beige;
+  /*color: @beige; */
+}
+
+#custom-weather {
+  margin-left: 6px;
+  padding: 0px 8px;
+  background: @raisin-black;
 }
 
 #cpu {
@@ -21,6 +27,7 @@
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   background: @raisin-black;
+  margin-left: 6px;
 }
 
 #memory {
@@ -70,35 +77,49 @@ tooltip {
 }
 
 #workspaces {
-  padding: 0 8px 0 3px;
-  border-radius: 6px;
-  color: transparent;
+  background: #1e1e2e;
+  margin: 0;
+  padding: 0;
   font-weight: bold;
+  font-style: normal;
   opacity: 1;
-}
-#workspaces button {
-  background: transparent;
-  min-width: 30px;
-  transition: all 0.3s ease-in-out;
-  opacity: 1;
-  color: #f38ba8;
-}
-#workspaces button.active {
-  color: #f38ba8;
-  opacity: 1;
-}
-#workspaces button.active box label {
-  color: #94e2d5;
+  font-size: 16px;
+  color: #1e1;
 }
 
+#workspaces button {
+  padding: 0px 5px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  color: #f5e0dc;
+  background-color: #1e1e2e;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
+}
+
+#workspaces button.active {
+  color: #1e1e2e;
+  background: #a6e3a1;
+  min-width: 40px;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  color: #c3dee5;
+  background: #1e1e2e;
+  opacity: 1;
+  animation: none;
+}
 #clock {
   padding: 0 15px;
 }
 
 #custom-launcher {
-  font-size: 16px;
-  padding: 0px 16px;
+  font-size: 18px;
   transition: none;
+  padding: 0px 10px;
+  margin-right: 6px;
   background: @raisin-black;
   color: rgba(137, 220, 235, 1);
 }
@@ -113,6 +134,14 @@ tooltip {
 #network {
   color: #cba6f7;
 }
+
+#network.speed {
+  background: @raisin-black;
+  padding: 0px 6px;
+  min-width: 10px;
+  color: white;
+}
+
 #bluetooth {
   min-width: 20px;
   padding: 0 10px;
@@ -137,7 +166,7 @@ tooltip {
 }
 
 #battery.good:not(.charging) {
-  color: #fab387; /* Peach */
+  color: #f9e2af; /* Peach */
   background: #1e1e2e; /* Base */
 }
 

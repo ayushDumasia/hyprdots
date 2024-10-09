@@ -17,3 +17,4 @@ vim.opt.guifont = "CaskaydiaCove NFM"
 require("vim-options")
 require("lazy").setup("plugins")
 
+

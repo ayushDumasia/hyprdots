@@ -4,8 +4,8 @@
   "margin-right": 8,
   "margin-top": 2,
   "margin-bottom": 2,
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["cpu", "memory", "clock"],
+  "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
+  "modules-center": ["clock", "custom/weather"],
   "modules-right": [
     "custom/wallpaper",
     "wireplumber",
@@ -14,6 +14,21 @@
     "bluetooth",
     "battery"
   ],
+  "network#speed": {
+    "interval": 1,
+    "format": "{ifname}%%",
+    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 22,
+    "min-length": 20,
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+  },
   "custom/launcher": {
     "format": "",
     "tooltip": false,
@@ -31,20 +46,25 @@
     "tooltip-format": "{used}/{total} GiB"
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "on-click": "activate",
-    "sort-by-name": true,
-    "on-scroll-up": "hyprctl dispatch workspace e-1",
-    "on-scroll-down": "hyprctl dispatch workspace e+1",
-    "format-icons": {
-      "active": "",
-      "urgent": "",
-      "default": ""
-    },
+    "all-outputs": true,
+    "warp-on-scroll": true,
+    "enable-bar-scroll": true,
+    "disable-scroll-wraparound": false,
     "persistent-workspaces": {
-      "*": 5
-    }
+      "*": 3
+    },
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "on-scroll-down": "hyprctl dispatch workspace e+1"
   },
+  "custom/weather": {
+    "format": "{}°C",
+    "tooltip": false,
+    "interval": 3600,
+    "exec": "wttrbar --location 'Ahmedabad'",
+    "return-type": "json"
+  },
+
   "clock": {
     "format": "{:%I:%M %p • %a %d/%m}",
     "tooltip": true,

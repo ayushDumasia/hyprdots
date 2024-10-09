@@ -51,15 +51,18 @@
 - **History Manager**: Atuin
 - **Search Utility**: Fzf (Fuzzy Finder)
 - **Terminal Multiplexer**: tmux
-- **Git Management**: gitui, lazygit
-- **Code Editors**: Neovim, Nano, Vim
-- **Task Manager**: btop
 - **Trash Control**: trashy
 - **Fetch Utilities**: nitch, fastfetch, cutefetch
 - **Zip Management**: unzip
 - **Clipboard Management**: cliphist, wl-clipboard
-- **File Manager**: yazi
 
+
+### TUI Setup
+
+- **Git Management**: gitui, lazygit
+- **Code Editors**: Neovim, Nano, Vim
+- **Task Manager**: btop
+- **File Manager**: yazi
 ---
 
 ### CLI Alternatives
