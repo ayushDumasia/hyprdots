@@ -49,6 +49,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 bindkey -s '^o' 'tmux new -s default\n'
+bindkey -s '^n' 'nvim\n'
 
 
 # # History
@@ -93,6 +94,8 @@ alias pacman='sudo pacman'
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
+alias gs='git status'
+alias ga='git add'
 
 fastfetch
 #nerdfetch

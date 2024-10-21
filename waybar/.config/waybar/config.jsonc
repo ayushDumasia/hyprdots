@@ -73,14 +73,15 @@
   "backlight": {
     "scroll-step": 5,
     "format": "{icon}",
-    "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "]
+    "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "],
+    "tooltip": true,
+    "tooltip-format": "{percent}%"
   },
   "custom/wallpaper": {
     "format": "\uf03e",
     "on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
     "tooltip": false
   },
-
   "network": {
     "format-wifi": " {icon}",
     "format-ethernet": "󰈀",
@@ -105,7 +106,6 @@
     "tooltip-format": "{capacity}%, about {time} left",
     "format-icons": [" ", " ", " ", " "]
   },
-
   "wireplumber": {
     "max-volume": 200,
     "scroll-step": 5,
@@ -115,9 +115,9 @@
     "format-muted": " ",
     "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click": "pamixer -t",
-    "tooltip-format": "{volume}% | {desc}"
+    "tooltip": true,
+    "tooltip-format": "{desc}"
   },
-
   "bluetooth": {
     "format": "{icon}",
     "format-icons": ["", "󰤾", "󰥀", "󰥄", "󰥈"],
